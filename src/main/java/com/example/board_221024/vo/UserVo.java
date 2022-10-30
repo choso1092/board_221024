@@ -13,6 +13,6 @@ public class UserVo {
     private String userPassword;
     private String userName;
     private String phoneNumber;
-
+    private String userAddress;
 
 }

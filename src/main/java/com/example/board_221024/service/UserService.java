@@ -21,7 +21,13 @@ public class UserService {
 
     public List<UserVo> getUser() {
         List<UserVo> list = new ArrayList<>();
-        userMapper.getUser();
+        int count = getUserCount();
+        if (count >0 ) {
+            list = userMapper.getUser();
+        }
         return list;
+    }
+    public Integer getUserCount() {
+        return userMapper.getUserCount();
     }
 }
