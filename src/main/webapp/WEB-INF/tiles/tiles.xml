@@ -5,7 +5,14 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/WEB-INF/tiles/Footer.jsp"/>
     </definition>
+    <definition name="none" template="/WEB-INF/tiles/none.jsp">
+        <put-attribute name="body" value="" />
+    </definition>
+    <definition name="login/*" extends="none">
+        <put-attribute name="body" value="/WEB-INF/views/login/{1}.jsp"/>
+    </definition>
         <definition name="*" extends="default">
             <put-attribute name="body" value="/WEB-INF/views/index.jsp"/>
         </definition>
+
 </tiles-definitions>
