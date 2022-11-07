@@ -7,6 +7,5 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    List<UserVo> getUser();
-    Integer getUserCount();
+    void saveUser(UserVo userVo);
 }

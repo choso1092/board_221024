@@ -9,19 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Controller
+/*@Controller
 public class ApplicationController {
     @Autowired
     UserService userService;
 
-    @RequestMapping({"/", ""})
-    public ModelAndView index() {
-        ModelAndView mv = new ModelAndView();
-        List<UserVo> userList = userService.getUser();
-        mv.addObject("userList", userList);
-        mv.setViewName("index");
-        return mv;
-    }
 
     @RequestMapping({"/join"})
     public ModelAndView join() {
@@ -29,4 +21,4 @@ public class ApplicationController {
         mv.setViewName("join");
         return mv;
     }
-}
+}*/
