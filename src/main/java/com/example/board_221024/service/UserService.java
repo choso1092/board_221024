@@ -18,15 +18,14 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    @Transactional
     public void joinUser(UserVo userVo){
-        userVo.setUserId("");
-        userVo.setUserPassword("");
-        userVo.setUserName("");
-        userVo.setPhoneNumber("");
-        userVo.setUserAddress("");
-        userMapper.saveUser(userVo);
+        Integer count = getUserCountByUserId(userVo.getUserId());
 
+        if (count == 0 ) {
+            userMapper.joinUser(userVo);
+        }
     }
-
+    public Integer getUserCountByUserId(String userId) {
+        return userMapper.duplicateUserByUserId(userId);
+    }
 }

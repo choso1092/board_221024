@@ -7,5 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    void saveUser(UserVo userVo);
+    Integer duplicateUserByUserId(String userId); // 유저 중복체크
+    int joinUser(UserVo param);
+
 }

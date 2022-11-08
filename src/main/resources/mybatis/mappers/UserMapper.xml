@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.board_221024.mapper.UserMapper">
-    <select id="getUser" resultType="com.example.board_221024.vo.UserVo">
+    <select id="getUserList" resultType="com.example.board_221024.vo.UserVo">
         SELECT U.USER_NAME
                 , U.USER_ID
         FROM USER U
@@ -11,5 +11,29 @@
         SELECT COUNT(U.USER_NAME)
         FROM USER U
         WHERE 1=1
+    </select>
+    <insert id="joinUser" parameterType="com.example.board_221024.vo.UserVo">
+        INSERT INTO USER (
+                          USER_NAME
+                          , USER_ID
+                          , USER_PASSWORD
+                          , PHONE_NUMBER
+                          , USER_ADRESS
+                          , REGISTER_DATETIME
+                          , USER_YN
+        ) VALUES (
+                  #{userName}
+                 , #{userId}
+                 , #{userPassword}
+                 , #{phoneNumber}
+                 , #{userAddress}
+                 , NOW()
+                 , 'y'
+                         )
+    </insert>
+    <select id="duplicateUserByUserId" resultType="int">
+        SELECT COUNT(U.USER_ID)
+        FROM USER U
+        WHERE USER_ID = #{userId}
     </select>
 </mapper>
