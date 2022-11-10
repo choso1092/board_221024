@@ -3,10 +3,10 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <html>
 <header>
-
+    <tiles:insertAttribute name="header"/>
 </header>
     <tiles:insertAttribute name = "body"/>
 <footer>
-
+    <tiles:insertAttribute name = "footer"/>
 </footer>
 </html>
