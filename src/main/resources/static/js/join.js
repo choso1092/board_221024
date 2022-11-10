@@ -48,4 +48,6 @@ checkForm = function () {
 //    signUpUser(); //실행
 //    }
     signUpUser();
+
+
 }

@@ -4,7 +4,7 @@
 <head>
     <script src="../js/join.js"></script>
     <script src="/js/jquery-3.6.1.min.js"></script>
-    <title>Title</title>
+    <title>회원가입</title>
 </head>
 <form method="post" action="/signUp">
     <div class="container">

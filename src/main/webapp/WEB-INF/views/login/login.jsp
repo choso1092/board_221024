@@ -96,19 +96,23 @@
             </label>
         </div>
         <div style="display:flex;">
-            <button class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
+            <button class="w-50 btn btn-lg btn-primary" type="submit" onclick="gotoBoardPage();">로그인</button>
             <button class="w-50 btn btn-lg btn-secondary" type="button" onclick="gotoJoinPage();">회원가입</button>
+
         </div>
         <p class="mt-4 mb-3 text-muted">&copy; 2017 - 2022</p>
     </form>
 </main>
 
-
-
 </body>
 </html>
 <script>
-    gotoJoinPage = function () {
+
+    let gotoJoinPage = function () {
         location.href = "/join";
+    }
+
+    gotoBoardPage = function (){
+        location.href = "/board"
     }
 </script>

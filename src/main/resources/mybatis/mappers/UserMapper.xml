@@ -36,4 +36,16 @@
         FROM USER U
         WHERE USER_ID = #{userId}
     </select>
+    <insert id="login" parameterType="com.example.board_221024.vo.UserVo">
+            INSERT INTO
+                    login (
+                             USER_ID
+                            ,USER_PASSWORD
+                    )
+                    VALUES(
+                            #{userId}
+                           ,#{userPassword}
+                    )
+    </insert>
+
 </mapper>
