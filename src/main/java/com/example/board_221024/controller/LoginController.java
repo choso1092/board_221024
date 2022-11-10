@@ -48,12 +48,14 @@ public class LoginController {
     @RequestMapping("/signUp")
     @ResponseBody
     public CommonResponseVo signUpUser(UserVo param) {
+        /**1. 회원가입이 잘되었는 지 확인하고 싶다.
+         * 2. 회원가입 -> DB 저장 을 하고싶다. **/
         CommonResponseVo r = new CommonResponseVo();
         try {
             userService.joinUser(param);
             r.setSuccess(true);
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             r.setSuccess(false);
             r.setMessage(e.toString());
         }
@@ -62,45 +64,22 @@ public class LoginController {
     @Autowired
     private SqlSession sqlSession;
 
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(Locale locale, Model model) {
-
-        return "login";
-    }
-
-    @RequestMapping(value = "/loginChk", method = RequestMethod.POST)
+    /**1. DB에 아이디를 확인하고 싶어
+     * 2. 맞는지 아닌지 결과값을 받고싶어 **/
+    @RequestMapping(value = "/loginTest")
     @ResponseBody
-    public HashMap<String, String> loginChk(Locale locale, Model model, HttpServletRequest request) {
-        HashMap<String, String> result = new HashMap <String,String>();
+    public CommonResponseVo loginProcess(UserVo param) {
+        CommonResponseVo result = new CommonResponseVo();
+        try {
+            Boolean r = userService.loginProcess(param);
+            result.setSuccess(r);
 
-        String userId = request.getParameter("id");
-        String userPassword = request.getParameter("pw");
-
-        UserVo userVo = new UserVo();
-
-        userVo.setUserId(userId);
-        userVo.setUserPassword(userPassword);
-
-        int insertRst = sqlSession.insert("login.insert", userVo);
-
-        if ( insertRst > 0) {
-            String Msg = "성공";
-            String Code = "0";
-
-            result.put("Msg", Msg);
-            result.put("Code", Code);
-
-            return result;
-        } else {
-            String Msg = "실패ㅔ";
-            String Code = "1";
-
-            result.put("Msg", Msg);
-            result.put("Code", Code);
-
-            return result;
+        }catch (Exception e) {
+            result.setSuccess(false);
         }
+        return result ;
     }
+
 }
+
 

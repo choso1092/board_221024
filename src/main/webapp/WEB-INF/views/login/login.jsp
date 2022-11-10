@@ -14,7 +14,8 @@
 
 
 
-
+    <script src="../js/login.js"></script>
+    <script src="/js/jquery-3.6.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
@@ -77,16 +78,15 @@
 <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-    <form>
         <img class="mb-4" src="../image/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">로그인</h1>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input class="form-control" id="floatingInput" placeholder="id를 입력해주세요">
             <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password를 입력해주세요">
             <label for="floatingPassword">Password</label>
         </div>
 
@@ -96,12 +96,11 @@
             </label>
         </div>
         <div style="display:flex;">
-            <button class="w-50 btn btn-lg btn-primary" type="submit" onclick="gotoBoardPage();">로그인</button>
+            <button onclick="loginChk();">로그인</button>
             <button class="w-50 btn btn-lg btn-secondary" type="button" onclick="gotoJoinPage();">회원가입</button>
 
         </div>
         <p class="mt-4 mb-3 text-muted">&copy; 2017 - 2022</p>
-    </form>
 </main>
 
 </body>
@@ -112,7 +111,5 @@
         location.href = "/join";
     }
 
-    gotoBoardPage = function (){
-        location.href = "/board"
-    }
 </script>
+

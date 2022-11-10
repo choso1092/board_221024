@@ -28,4 +28,18 @@ public class UserService {
     public Integer getUserCountByUserId(String userId) {
         return userMapper.duplicateUserByUserId(userId);
     }
+    public Integer isLoginAble(UserVo param) {
+        return userMapper.isLoginAble(param);
+    }
+    public Boolean loginProcess(UserVo param) {
+        Boolean result = false;
+        Integer userCount = isLoginAble(param);
+        if (userCount > 0) {
+            result = true;
+        } else {
+            result = false;
+        }
+        return result;
+    }
+
 }

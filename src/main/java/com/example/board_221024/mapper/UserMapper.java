@@ -9,5 +9,5 @@ import java.util.List;
 public interface UserMapper {
     Integer duplicateUserByUserId(String userId); // 유저 중복체크
     int joinUser(UserVo param);
-
+    Integer isLoginAble(UserVo param);
 }

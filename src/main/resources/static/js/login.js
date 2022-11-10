@@ -1,19 +1,21 @@
-$ (document).ready(function (){
-    $('login_btn').on('click', function(){
-        loginChk();
-    })
-});
 
 function loginChk() {
+
+    let param = {
+        userId: $('#floatingInput').val(),
+        userPassword: $('#floatingPassword').val()
+    }
     $.ajax({
-        url: "/login"
+        url: "/loginTest"
         , type: "POST"
-        , data: {
-            id: $('#id').val(),
-            pw: $('#pw').val()
-        },
-        success: function (data) {
-            alert(data.Msg);
+        , data: param
+        , success: function (data) {
+            console.log(data);
+            if (data.success) {
+                gotoBoardPage();
+            } else {
+                alert("로그인 정보가 없습니다.");
+            }
         },
         error: function () {
             alert("err");
@@ -21,3 +23,6 @@ function loginChk() {
     });
 }
 
+gotoBoardPage = function (){
+    location.href = "/board"
+}

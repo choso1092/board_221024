@@ -36,16 +36,11 @@
         FROM USER U
         WHERE USER_ID = #{userId}
     </select>
-    <insert id="login" parameterType="com.example.board_221024.vo.UserVo">
-            INSERT INTO
-                    login (
-                             USER_ID
-                            ,USER_PASSWORD
-                    )
-                    VALUES(
-                            #{userId}
-                           ,#{userPassword}
-                    )
-    </insert>
+    <select id="isLoginAble" resultType="int">
+        SELECT count(u.user_id)
+            FROM user u
+            WHERE u.user_id = #{userId}
+            AND u.user_password = #{userPassword}
+    </select>
 
 </mapper>
