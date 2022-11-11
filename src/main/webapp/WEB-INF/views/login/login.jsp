@@ -83,7 +83,7 @@
 
         <div class="form-floating">
             <input class="form-control" id="floatingInput" placeholder="id를 입력해주세요">
-            <label for="floatingInput">Email address</label>
+            <label for="floatingInput">ID address</label>
         </div>
         <div class="form-floating">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password를 입력해주세요">
@@ -92,11 +92,11 @@
 
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> 기억하기
+                <input type="checkbox" value="remember-me"> 기억해라
             </label>
         </div>
         <div style="display:flex;">
-            <button onclick="loginChk();">로그인</button>
+            <button class="w-50 btn btn-lg btn-secondary" type="button" onclick="loginChk();">로그인</button>
             <button class="w-50 btn btn-lg btn-secondary" type="button" onclick="gotoJoinPage();">회원가입</button>
 
         </div>
