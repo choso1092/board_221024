@@ -1,6 +1,6 @@
 
 function loginChk() {
-
+    let userId =$('#floatingInput').val();
     let param = {
         userId: $('#floatingInput').val(),
         userPassword: $('#floatingPassword').val()
@@ -12,7 +12,7 @@ function loginChk() {
         , success: function (data) {
             console.log(data);
             if (data.success) {
-                gotoBoardPage();
+                gotoBoardPage(userId);
             } else {
                 alert("로그인 정보가 없습니다.");
             }
@@ -23,6 +23,6 @@ function loginChk() {
     });
 }
 
-gotoBoardPage = function (){
-    location.href = "/board"
+gotoBoardPage = function (userId){
+    location.href = "/board?userId="+ userId;
 }

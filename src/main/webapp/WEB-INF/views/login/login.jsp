@@ -78,7 +78,7 @@
 <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-        <img class="mb-4" src="../image/bootstrap-logo.svg" alt="" width="72" height="57">
+        <img src="../image/CCS.jpg" style="width: 180px; margin-bottom: 10px">
         <h1 class="h3 mb-3 fw-normal">로그인</h1>
 
         <div class="form-floating">
@@ -92,12 +92,12 @@
 
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> 기억해라
+                <input type="checkbox" value="remember-me"> 아이디기억하기
             </label>
         </div>
         <div style="display:flex;">
-            <button class="w-50 btn btn-lg btn-secondary" type="button" onclick="loginChk();">로그인</button>
-            <button class="w-50 btn btn-lg btn-secondary" type="button" onclick="gotoJoinPage();">회원가입</button>
+            <button class="w-50 btn btn-lg btn-secondary" style="margin-right:10px; background-color: #8080e0" type="button" onclick="loginChk();">로그인</button>
+            <button class="w-50 btn btn-lg btn-secondary" style="background-color: #8080e0" type="button" onclick="gotoJoinPage();">회원가입</button>
 
         </div>
         <p class="mt-4 mb-3 text-muted">&copy; 2017 - 2022</p>

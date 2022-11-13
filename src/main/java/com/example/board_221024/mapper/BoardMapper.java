@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Mapper
 public interface BoardMapper {
 
-    int createBoard(BoardVo param);
+    void createBoard(BoardVo param);
 
 }

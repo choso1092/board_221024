@@ -13,5 +13,8 @@ public class BoardService {
     @Autowired
     BoardMapper boardMapper;
 
+    public void createBoard(BoardVo boardVo){
+        boardMapper.createBoard(boardVo);
+    }
 
 }
