@@ -14,4 +14,25 @@
                , NOW()
                 )
         </insert>
+        <select id="viewList" resultType="com.example.board_221024.vo.BoardVo">
+            SELECT b.board_number
+                  ,b.user_id
+                  ,b.title
+                  ,b.content
+                  ,b.board_time
+            FROM board b
+            WHERE 1=1
+              <if test="searchValue !=null and searchValue!=''">
+                  <if test="searchKey !=null and searchKey=='title'">
+                  AND    b.title LIKE CONCAT('%',#{searchValue},'%')
+                  </if>
+                  <if test="searchKey !=null and searchKey=='content'">
+                  AND    b.content LIKE CONCAT('%',#{searchValue},'%')
+                  </if>
+                  <if test="searchKey !=null and searchKey=='userId'">
+                  AND    b.user_id LIKE CONCAT('%',#{searchValue},'%')
+                  </if>
+              </if>
+        </select>
+
 </mapper>
