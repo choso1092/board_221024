@@ -34,12 +34,7 @@ public class LoginController {
         mv.setViewName("login/join");
         return mv;
     }
-    @RequestMapping("/board")
-    public ModelAndView boardPage(){
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("board/board");
-        return mv;
-    }
+
     /**요청 보낸 url 이 request mapping 으로 연결을 해주고
      * 여기서는 join.js에서 signUpUser 라는 함수에서 ajax 통신을 했음
      * 보낼 때 param 으로 보냈는데, key 값은 VO 에 선언한 대로 맞춰 줘야 함.
