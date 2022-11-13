@@ -18,6 +18,7 @@ public class BoardController {
     public ModelAndView boardPage(String userId){
         ModelAndView mv = new ModelAndView();
         mv.addObject("userId", userId);
+        System.out.println("git test");
         mv.setViewName("board/board");
         return mv;
     }
