@@ -2,13 +2,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<html>0
+<html>
 <head>
+    <link href="../css/boardview.css" rel="stylesheet">
     <script src="../js/boardList.js"></script>
     <script src="../js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
-헬로우 게시판이다
+<h2>게시글 목록</h2>
+
 </body>
 <div style="display:flex;">
     <div class="search-area">
@@ -18,17 +20,17 @@
             <option value="userId">작성자</option>
         </select>
         <input id="searchValue">
-        <button class="btn btn-primary" type="button" onclick="search();">검색</button>
+        <button class="btn btn-primary" style="margin-bottom: 20px;" type="button" onclick="search();">검색</button>
     </div>
     <input type="hidden" id="userId" value="${userId}">
-    <button class="btn btn-primary" type="button" onclick="boardWrite();">글쓰기</button>
+    <button class="btn btn-primary" type="button" style="margin-bottom: 20px; margin-left: 10px;" onclick="boardWrite();">글쓰기</button>
 </div>
 <table>
     <thead>
-    <th>번호</th>
-    <th>제목</th>
-    <th>작성자</th>
-    <th>작성일</th>
+    <th scope="col">번호</th>
+    <th scope="col">제목</th>
+    <th scope="col">작성자</th>
+    <th scope="col">작성일</th>
     </thead>
     <tbody id="viewList"></tbody>
 </table>
