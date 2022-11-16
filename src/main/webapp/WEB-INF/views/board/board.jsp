@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -32,6 +31,7 @@
     <th scope="col">작성자</th>
     <th scope="col">작성일</th>
     </thead>
+
     <tbody id="viewList"></tbody>
 </table>
 </html>

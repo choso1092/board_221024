@@ -14,5 +14,5 @@ public interface BoardMapper {
     void createBoard(BoardVo param);
 
     List<BoardVo> viewList(SearchBoardDTO searchBoardDTO);
-
+    BoardVo getBoardDetail(String boardNumber);
 }

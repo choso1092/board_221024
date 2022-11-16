@@ -24,4 +24,7 @@ public class BoardService {
     public List<BoardVo> getBoardList(SearchBoardDTO searchBoardDTO){
         return boardMapper.viewList(searchBoardDTO);
     }
+    public BoardVo getBoardDetail(String boardNumber){
+        return boardMapper.getBoardDetail(boardNumber);
+    }
 }

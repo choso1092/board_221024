@@ -16,10 +16,12 @@ search = function () {
             if (data.success) {
                 if (data.data !=null && data.data.length>0) {
                     data.data.forEach(function (b) {
-                        $("#viewList").append("<tr><td>"+b.boardNumber+"</td><td>"
-                            +b.title+"</td><td>"
-                            +b.userId+"</td><td>"+
-                            b.boardTime+"</td></tr>");
+                        $("#viewList").append("" +
+                            "<tr><td>"+b.boardNumber+"</td>" +
+                            "<td><a href='/board/boardDetail?boardNumber="+
+                            b.boardNumber+"'>"+b.title+"</a></td>" +
+                            "<td>"+b.userId+"</td>" +
+                            "<td>"+b.boardTime+"</td></tr>");
                     })
                 }
             } else {

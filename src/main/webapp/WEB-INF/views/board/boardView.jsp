@@ -1,11 +1,14 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>Title</title>
 </head>
+<script>
+    let test = '${boardDetail}';
+</script>
 <body>
-  <h1 th:text="${board.title}">제목 입니다</h1>
-  <p th:text="${board.content}">내용이 들어갑니다.</p>
+  <h1 class="title">${boardDetail.title}</h1>
+  <p class="content">${boardDetail.content}</p>
 </body>
 </html>
