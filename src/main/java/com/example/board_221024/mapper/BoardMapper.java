@@ -15,4 +15,6 @@ public interface BoardMapper {
 
     List<BoardVo> viewList(SearchBoardDTO searchBoardDTO);
     BoardVo getBoardDetail(String boardNumber);
+
+    void boardDelete(int num) throws Exception;
 }

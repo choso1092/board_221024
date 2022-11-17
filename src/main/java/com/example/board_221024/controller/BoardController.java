@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -87,6 +88,10 @@ public class BoardController {
         mv.setViewName("board/boardView");
         return mv;
     }
+    @RequestMapping("/boardDelete")
+    public String boardDelete(@RequestParam("num") int num) throws Exception {
 
-
+        boardService.boardDelete(num);
+        return "redirect:boardList";
+    }
 }

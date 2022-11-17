@@ -43,5 +43,8 @@
         FROM board b
         WHERE b.board_number = #{boardNumber}
     </select>
-
+    <delete id ="boardDelete" parameterType="int">
+        DELETE FROM board b
+        WHERE b.board_number = #{boardNumber}
+    </delete>
 </mapper>

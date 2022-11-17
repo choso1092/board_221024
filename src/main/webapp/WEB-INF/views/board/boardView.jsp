@@ -35,8 +35,8 @@
 
         </table>
         <input class="btn" type="reset" style="margin-top: 20px" value="글 수정">
-        <input class="btn" type="button" value="글 삭제">
-        <input class="btn" type="button" value="목록으로" onclick="location.href='/board'">
+        <input class="btn" type="button" value="글 삭제" onclick="location.href='boardDelete'">
+        <input class="btn" type="button" value="목록으로" onclick="location.href='board'">
     </div>
 </body>
 </html>
