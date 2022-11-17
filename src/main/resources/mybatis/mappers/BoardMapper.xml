@@ -35,7 +35,8 @@
               </if>
         </select>
     <select id="getBoardDetail" resultType="com.example.board_221024.vo.BoardVo">
-        SELECT b.title
+        SELECT   b.board_number
+                ,b.title
                 , b.content
                 , b.board_time
                 , b.user_id as register_id

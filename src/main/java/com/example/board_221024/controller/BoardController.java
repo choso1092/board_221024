@@ -87,4 +87,6 @@ public class BoardController {
         mv.setViewName("board/boardView");
         return mv;
     }
+
+
 }
