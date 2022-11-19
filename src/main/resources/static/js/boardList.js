@@ -17,7 +17,7 @@ search = function () {
                 if (data.data !=null && data.data.length>0) {
                     data.data.forEach(function (b) {
                         $("#viewList").append("" +
-                            "<tr><td>"+b.boardNumber+"</td>" +
+                            "<tr><td>"+b.num+"</td>" +
                             "<td><a href='/board/boardDetail?boardNumber="+
                             b.boardNumber+"'>"+b.title+"</a></td>" +
                             "<td>"+b.userId+"</td>" +
