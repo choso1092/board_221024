@@ -15,13 +15,15 @@
                 )
         </insert>
         <select id="viewList" resultType="com.example.board_221024.vo.BoardVo">
-            SELECT b.board_number
+            SELECT row_number() over (order by b.board_time) as num
+                  ,b.board_number
                   ,b.user_id
                   ,b.title
                   ,b.content
                   ,b.board_time
             FROM board b
             WHERE 1=1
+            order by num desc
               <if test="searchValue !=null and searchValue!=''">
                   <if test="searchKey !=null and searchKey=='title'">
                   AND    b.title LIKE CONCAT('%',#{searchValue},'%')
@@ -33,6 +35,7 @@
                   AND    b.user_id LIKE CONCAT('%',#{searchValue},'%')
                   </if>
               </if>
+
         </select>
     <select id="getBoardDetail" resultType="com.example.board_221024.vo.BoardVo">
         SELECT   b.board_number
@@ -43,7 +46,7 @@
         FROM board b
         WHERE b.board_number = #{boardNumber}
     </select>
-    <delete id ="boardDelete" parameterType="int">
+    <delete id ="boardDelete" parameterType="com.example.board_221024.vo.BoardVo">
         DELETE FROM board b
         WHERE b.board_number = #{boardNumber}
     </delete>

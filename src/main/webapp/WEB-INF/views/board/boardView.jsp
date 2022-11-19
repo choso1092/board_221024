@@ -3,11 +3,13 @@
 <html>
 <head>
     <link href="../css/boardview.css" rel="stylesheet">
-    <script src="../js/boardList.js"></script>
+    <script src="../js/boardDetail.js"></script>
     <script src="../js/jquery-3.6.1.min.js"></script>
 </head>
 <script>
+    //JS에서 사용하고자 하는 값을 확인 하는 방법
     let test = '${boardDetail}';
+    let boardNumber = '${boardDetail.boardNumber}';
 </script>
 
 <body>
@@ -35,8 +37,10 @@
 
         </table>
         <input class="btn" type="reset" style="margin-top: 20px" value="글 수정">
-        <input class="btn" type="button" value="글 삭제" onclick="location.href='boardDelete'">
-        <input class="btn" type="button" value="목록으로" onclick="location.href='board'">
+<%--JS에서 사용하고자 하는 값을 확인하는 두 번째 방법(히든으로 확인)--%>
+        <input type="hidden" id="boardNumber" value="${boardDetail.boardNumber}">
+        <input class="btn" type="button" value="글 삭제" onclick="deleteBoard()">
+        <input class="btn" type="button" value="목록으로" onclick="location.href='/board'">
     </div>
 </body>
 </html>

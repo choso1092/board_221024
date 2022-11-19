@@ -89,9 +89,16 @@ public class BoardController {
         return mv;
     }
     @RequestMapping("/boardDelete")
-    public String boardDelete(@RequestParam("num") int num) throws Exception {
-
-        boardService.boardDelete(num);
-        return "redirect:boardList";
+    @ResponseBody
+    public CommonResponseVo deleteBoard(BoardVo param){
+        CommonResponseVo r = new CommonResponseVo();
+        try{
+            boardService.boardDelete(param);
+            r.setSuccess(true);
+        }catch (Exception e){
+            r.setSuccess(false);
+            r.setMessage(e.toString());
+        }
+        return r;
     }
 }

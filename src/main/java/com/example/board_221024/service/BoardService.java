@@ -27,7 +27,7 @@ public class BoardService {
     public BoardVo getBoardDetail(String boardNumber){
         return boardMapper.getBoardDetail(boardNumber);
     }
-    public void boardDelete(int num) throws Exception{
-        boardMapper.boardDelete(num);
+    public void boardDelete(BoardVo param){
+        boardMapper.boardDelete(param);
     }
 }
