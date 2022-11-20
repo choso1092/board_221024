@@ -17,4 +17,6 @@ public interface BoardMapper {
     BoardVo getBoardDetail(String boardNumber);
 
     void boardDelete(BoardVo param);
+
+    void boardModify(BoardVo param);
 }

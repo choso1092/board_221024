@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -63,10 +64,12 @@ public class LoginController {
      * 2. 맞는지 아닌지 결과값을 받고싶어 **/
     @RequestMapping(value = "/loginTest")
     @ResponseBody
-    public CommonResponseVo loginProcess(UserVo param) {
+    public CommonResponseVo loginProcess(UserVo param,HttpServletRequest request) {
         CommonResponseVo result = new CommonResponseVo();
+        HttpSession session = request.getSession();
         try {
             Boolean r = userService.loginProcess(param);
+            session.setAttribute("userId",param.getUserId());
             result.setSuccess(r);
 
         }catch (Exception e) {

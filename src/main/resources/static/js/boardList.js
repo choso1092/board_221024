@@ -34,5 +34,5 @@ search = function () {
 }
 boardWrite = function () {
     let userId = $("#userId").val();
-    location.href = "board/boardWrite?userId=" + userId;
+    location.href = "/board/boardWrite?userId=" + userId;
 }

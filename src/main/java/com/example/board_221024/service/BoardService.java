@@ -30,4 +30,6 @@ public class BoardService {
     public void boardDelete(BoardVo param){
         boardMapper.boardDelete(param);
     }
+
+    public void boardModify(BoardVo param) { boardMapper.boardModify(param);}
 }
