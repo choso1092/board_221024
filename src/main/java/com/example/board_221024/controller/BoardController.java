@@ -31,14 +31,14 @@ public class BoardController {
         return mv;
     }
 
-//    @RequestMapping({ "/boardSession"})
-//    public ModelAndView boardSession(HttpServletRequest request) {
-//        ModelAndView mv = new ModelAndView();
-//        HttpSession session = request.getSession();
-//        mv.addObject("userId", session.getAttribute("userId"));
-//        mv.setViewName("board/board");
-//        return mv;
-//    }
+/*   @RequestMapping({ "/boardSession"})
+    public ModelAndView boardSession(HttpServletRequest request) {
+        ModelAndView mv = new ModelAndView();
+        HttpSession session = request.getSession();
+        mv.addObject("userId", session.getAttribute("userId"));
+        mv.setViewName("board/board");
+        return mv;
+    }*/
 
     @RequestMapping("/boardWrite")
     public ModelAndView createPage(String userId) {
