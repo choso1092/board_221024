@@ -138,4 +138,18 @@ public class BoardController {
         mv.setViewName("board/boardModify");
         return mv;
     }
+    @RequestMapping("/changeBoard")
+    @ResponseBody
+    public CommonResponseVo changeBoard(BoardVo param) {
+        CommonResponseVo r = new CommonResponseVo();
+        try {
+            boardService.changeBoard(param);
+            r.setSuccess(true);
+        } catch (Exception e) {
+            System.out.println(e);
+            r.setSuccess(false);
+            r.setMessage(e.toString());
+        }
+        return r;
+    }
 }

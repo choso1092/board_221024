@@ -4,6 +4,7 @@
 <head>
     <link href="../css/boardview.css" rel="stylesheet">
     <script src="../js/boardModify.js"></script>
+    <script src="../js/changeBoard.js"></script>
     <script src="../js/jquery-3.6.1.min.js"></script>
 </head>
 <script>
@@ -29,11 +30,11 @@
         </tr>
         <tr>
             <th>내용</th>
-            <td><input id="content" type="text" value="${boardDetail.content}"></td>
+            <td><input id="inputContent" type="text" value="${boardDetail.content}"></td>
         </tr>
     </table>
     <input type="hidden" id="boardNumber" value="${boardDetail.boardNumber}">
-    <input class="btn" type="button" value="수정완료" style="margin-top: 20px;" onclick="updateTabs()">
+    <input class="btn" type="button" value="수정완료" style="margin-top: 20px;" onclick="changeBoard()">
     <input class="btn" type="button" value="목록으로" onclick="location.href='/board'">
 </div>
 

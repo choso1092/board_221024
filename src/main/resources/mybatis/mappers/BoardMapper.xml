@@ -49,7 +49,7 @@
     </delete>
     <update id="boardUpdate" parameterType="com.example.board_221024.vo.BoardVo">
         UPDATE board.b
-        FROM b.title=#{b.title}, b.content=#{b.content}
-        WHERE b.user_id =#{b.user_id}
+        SET b.title=#{b.title}, b.content=#{b.content}, b.board_time=(NOW)
+        WHERE b.board_number = #{boardNumber}
     </update>
 </mapper>
