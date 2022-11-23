@@ -12,8 +12,8 @@ function loginChk() {
         , success: function (data) {
             console.log(data);
             if (data.success) {
-                gotoBoardPage(userId);
-                // gotoBoardPage();
+                // gotoBoardPage(userId);
+                gotoBoardPage();
             } else {
                 alert("로그인 정보가 없습니다.");
             }
@@ -28,6 +28,6 @@ gotoBoardPage = function (userId){
     location.href = "/board?userId="+ userId;
 }
 
-// gotoBoardPage = function (){
-//     location.href = "/board/boardSession";
-// }
+gotoBoardPage = function (){
+    location.href = "/board/boardSession";
+}

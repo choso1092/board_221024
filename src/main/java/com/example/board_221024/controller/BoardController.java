@@ -6,10 +6,7 @@ import com.example.board_221024.vo.BoardVo;
 import com.example.board_221024.vo.CommonResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,14 +28,14 @@ public class BoardController {
         return mv;
     }
 
-/*   @RequestMapping({ "/boardSession"})
+    @RequestMapping({"/boardSession"})
     public ModelAndView boardSession(HttpServletRequest request) {
         ModelAndView mv = new ModelAndView();
         HttpSession session = request.getSession();
         mv.addObject("userId", session.getAttribute("userId"));
         mv.setViewName("board/board");
         return mv;
-    }*/
+    }
 
     @RequestMapping("/boardWrite")
     public ModelAndView createPage(String userId) {
@@ -88,7 +85,7 @@ public class BoardController {
      * 디테일뷰 페이지에도 똑같이 히든으로 가지고 잇어보세요
      **/
     @RequestMapping("/boardDetail")
-    public ModelAndView boardViewDetail(String boardNumber,HttpServletRequest request) {
+    public ModelAndView boardViewDetail(String boardNumber, HttpServletRequest request) {
         ModelAndView mv = new ModelAndView();
         HttpSession session = request.getSession();
         try {
@@ -97,7 +94,7 @@ public class BoardController {
             boardDetail = boardService.getBoardDetail(boardNumber);
             /**ModelAndView 에 Object 를 포함해서 가져오겠다.*/
             mv.addObject("boardDetail", boardDetail);
-            mv.addObject("userId",session.getAttribute("userId"));
+            mv.addObject("userId", session.getAttribute("userId"));
             /** jsp 에서 jstl 구문으로 불러와서 사용할 수 있음
              * Tag 라이브러리 를 사용해서 , <c:if></c:if> <c:forEach></c:forEach> <c:choose><c:when></c:when></c:choose> */
         } catch (Exception e) {
@@ -120,8 +117,9 @@ public class BoardController {
         }
         return r;
     }
+
     @RequestMapping("/boardModify")
-    public ModelAndView modifyPage(String userId,String boardNumber) {
+    public ModelAndView modifyPage(String userId, String boardNumber) {
         ModelAndView mv = new ModelAndView();
         try {
             BoardVo boardDetail = new BoardVo();
@@ -129,7 +127,7 @@ public class BoardController {
             boardDetail = boardService.getBoardDetail(boardNumber);
             /**ModelAndView 에 Object 를 포함해서 가져오겠다.*/
             mv.addObject("boardDetail", boardDetail);
-            mv.addObject("userId",userId);
+            mv.addObject("userId", userId);
             /** jsp 에서 jstl 구문으로 불러와서 사용할 수 있음
              * Tag 라이브러리 를 사용해서 , <c:if></c:if> <c:forEach></c:forEach> <c:choose><c:when></c:when></c:choose> */
         } catch (Exception e) {
@@ -138,6 +136,7 @@ public class BoardController {
         mv.setViewName("board/boardModify");
         return mv;
     }
+
     @RequestMapping("/changeBoard")
     @ResponseBody
     public CommonResponseVo changeBoard(BoardVo param) {
