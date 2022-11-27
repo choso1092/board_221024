@@ -29,11 +29,11 @@ signUpUser = function () {
             if (data.success) {
                 alert("성공 햇습니다");
             } else {
-                alert("실패 다시 시도해 주세여");
+                alert("실패했지롱");
             }
 
         }, error : function (exception) {
-            alert("실패 다시 시도해 주세여");
+            alert("아예 실패했습니다");
 
         }
         // , beforeSend :function (xhr) {

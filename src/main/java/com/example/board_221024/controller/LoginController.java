@@ -73,6 +73,7 @@ public class LoginController {
             result.setSuccess(r);
 
         }catch (Exception e) {
+            System.out.println(e);
             result.setSuccess(false);
         }
         return result ;

@@ -18,7 +18,5 @@ public interface BoardMapper {
 
     void boardDelete(BoardVo param);
 
-    void boardModify(BoardVo param);
-
     void changeBoard(BoardVo param);
 }

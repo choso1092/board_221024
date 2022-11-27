@@ -12,7 +12,7 @@ public class TilesConfig {
     @Bean
     public TilesConfigurer tilesConfigurer() {
         final TilesConfigurer tilesConfigurer = new TilesConfigurer();
-        // Definitions 추가 (tiles.xml 경로 설정)
+        // Definitions  추가 (tiles.xml 경로 설정)
         //다수의 타일-정의 파일을 명시하기 위해 위치 패스에 와일드카드를 사용하는 것도 가능하다.
         //"/WEB-INF/**/tiles.xml"과 같이 /WEB-INF/이하의 디렉터리에서 tiles.xml 을 찾기를 원할때 사용한다.
         tilesConfigurer.setDefinitions(new String[]{"WEB-INF/tiles/tiles.xml"});

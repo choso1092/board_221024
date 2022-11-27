@@ -34,6 +34,7 @@ public class UserService {
     public Boolean loginProcess(UserVo param) {
         Boolean result = false;
         Integer userCount = isLoginAble(param);
+
         if (userCount > 0) {
             result = true;
         } else {
