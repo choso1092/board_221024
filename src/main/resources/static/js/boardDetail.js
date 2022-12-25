@@ -21,3 +21,8 @@ deleteBoard = function (){
         }
     })
 }
+
+golist = function (){
+    let userId = $("#userId").val();
+    location.href = '/board?userId='+userId
+}

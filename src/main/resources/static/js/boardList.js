@@ -1,6 +1,7 @@
 search = function () {
     let searchKey = $("#searchKey").val()
     let searchValue = $("#searchValue").val()
+    let userId = $("#userId").val();
 
     let param = {
         searchKey: searchKey
@@ -18,8 +19,8 @@ search = function () {
                     data.data.forEach(function (b) {
                         $("#viewList").append("" +
                             "<tr><td>"+b.num+"</td>" +
-                            "<td><a href='/board/boardDetail?boardNumber="+
-                            b.boardNumber+"'>"+b.title+"</a></td>" +
+                            '<td><a href="/board/boardDetail?boardNumber='+b.boardNumber+'&userId='+userId+'">' +
+                            ""+b.title+"</a></td>" +
                             "<td>"+b.userId+"</td>" +
                             "<td>"+b.boardTime+"</td></tr>");
                     })
@@ -32,6 +33,8 @@ search = function () {
         }
     })
 }
+
+
 boardWrite = function () {
     let userId = $("#userId").val();
     location.href = "/board/boardWrite?userId=" + userId;

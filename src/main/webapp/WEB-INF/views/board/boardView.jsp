@@ -43,7 +43,8 @@
     <%--JS에서 사용하고자 하는 값을 확인하는 두 번째 방법(히든으로 확인)--%>
     <input type="hidden" id="boardNumber" value="${boardDetail.boardNumber}">
     <input class="btn" type="button" value="글 삭제" style="margin-top: 20px;" onclick="deleteBoard()">
-    <input class="btn" type="button" value="목록으로" onclick="location.href='/board'">
+<%--    <input class="btn" type="button" value="목록으로" onclick="location.href='/board?userId='">--%>
+    <input class="btn" type="button" value="목록으로" onclick="golist()">
 </div>
 </body>
 </html>
